@@ -1,11 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @todo_list.title %>
-</p>
-<%= render @todo_list.todo_items %>
-<%= render "todo_items/form"%>
+<h1>View</h1>
+<table class="table table-striped">
+  <thead class="thead-white">
+    <tr>
+      <th colspan="2">Title</th>
+      <th></th>
+      <th><%= @todo_list.title %></th>
+    </tr>
+  </thead>
+  <tbody>
+        <%= render @todo_list.todo_items %>
+      <tr>
 
-<% link_to 'Edit', edit_todo_list_path(@todo_list) %> |
-<%= link_to 'Back', todo_lists_path %>
+        <%= render "todo_items/form"%>
+      </tr>
+      <tr>
+    <td colspan="4" align="center">
+      <%= link_to 'Back', todo_lists_path, class: 'btn btn-outline-dark' %>
+      <%= link_to 'Edit', edit_todo_list_path(@todo_list), class:'btn btn-outline-success' %>
+    <%= link_to 'Delete', edit_todo_list_path(@todo_list), class:'btn btn-outline-danger' %>
+    </td>
+  </tr>
+  </tbody>
+</table>

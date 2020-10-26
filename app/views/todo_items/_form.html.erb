@@ -1,4 +1,13 @@
-<%= form_for ([@todo_list, @todo_list.todo_items.build]) do |f| %>
-  <%= f.text_field :content, autofocus:true %>
-  <%= f.submit %>
-<% end %>
+
+<td colspan="4">
+  <%= form_for ([@todo_list, @todo_list.todo_items.build]) do |f| %>
+  <div class="row">
+    <div class="col-10">
+      <%= f.text_field :content, autofocus:true, class:'form-control' %>
+    </div>
+    <div class="col-2">
+      <%= f.submit :Submit, class: 'btn btn-outline-success' %>
+    </div>
+  </div>
+  <% end %>
+</td>
